@@ -18,12 +18,12 @@ if n is less than 6 and not 0: the string and is less than 6 and not 0, followed
 You can only use the putchar function (every other function (printf, puts, etcâ€¦) is forbidden)
 All your code should be in the main function, You can only use putchar twice in your code
 
-*3-Write a program that prints the alphabet in lowercase, followed by a new line.
+*4-Write a program that prints the alphabet in lowercase, followed by a new line.
 
 You can only use the putchar function (every other function (printf, puts, etcâ€¦) is forbidden)
 All your code should be in the main function, you can only use putchar twice in your code
 
-*4-Write a program that prints the alphabet in lowercase, and then in uppercase, followed by a new line.
+*3-Write a program that prints the alphabet in lowercase, and then in uppercase, followed by a new line.
 
 You can only use the putchar function (every other function (printf, puts, etcâ€¦) is forbidden)
 All your code should be in the main function, you can only use putchar three times in your code
@@ -61,7 +61,7 @@ You can only use the putchar function (every other function (printf, puts, etcâ€
 You can only use putchar five times maximum in your code, you are not allowed to use any variable of type char
 All your code should be in the main function
 
-*11-Write a program that prints all possible different combinations of two digits.
+*100-Write a program that prints all possible different combinations of two digits.
 
 Numbers must be separated by ,, followed by a space the two digits must be different
 01 and 10 are considered the same combination of the two digits 0 and 1
@@ -70,7 +70,7 @@ You can only use the putchar function (every other function (printf, puts, etcâ€
 You can only use putchar five times maximum in your code, you are not allowed to use any variable of type char
 All your code should be in the main function
 
-*12-Write a program that prints all possible different combinations of three digits.
+*101-Write a program that prints all possible different combinations of three digits.
 
 Numbers must be separated by ,, followed by a space
 The three digits must be different
@@ -80,7 +80,7 @@ You can only use the putchar function (every other function (printf, puts, etcâ€
 You can only use putchar six times maximum in your code, you are not allowed to use any variable of type char
 All your code should be in the main function
 
-*13-Write a program that prints all possible combinations of two two-digit numbers.
+*102-Write a program that prints all possible combinations of two two-digit numbers.
 
 The numbers should range from 0 to 99, the two numbers should be separated by a space
 All numbers should be printed with two digits. 1 should be printed as 01
