@@ -27,7 +27,7 @@ void print_times_table(int n)
 					if (!(dec >= 1) && !(cen >= 1))
 						_putchar(' ');
 					if (!(dec >= 1) && (cen >= 1))
-						_putchar('0');
+						_putchar('0' + dec);
 					if (dec >= 1)
 						_putchar('0' + dec);
 					_putchar('0' + uni);
