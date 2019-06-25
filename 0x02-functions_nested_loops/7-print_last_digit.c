@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 /**
  * print_last_digit - give you the last digit of a  number
  * @y: get the input
