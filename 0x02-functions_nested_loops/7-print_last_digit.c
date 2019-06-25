@@ -6,7 +6,7 @@
  */
 int print_last_digit(int y)
 {
-	if (y > 0)
+	if (y >= 0)
 	{
 		y = y % 10;
 	}
