@@ -15,7 +15,8 @@ void print_times_table(int n)
 			{
 				z = x * y;
 				cen = z / 100;
-				dec = (z / 10) % 10;
+				dec = (z / 10);
+				dec = dec % 10;
 				uni = z % 10;
 				if (y > 0)
 				{
@@ -31,7 +32,6 @@ void print_times_table(int n)
 					if (dec >= 1)
 						_putchar('0' + dec);
 					_putchar('0' + uni);
-
 					if (!(y == n))
 						_putchar(',');
 				}
