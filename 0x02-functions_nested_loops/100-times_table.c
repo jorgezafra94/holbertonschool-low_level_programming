@@ -18,9 +18,8 @@ void print_times_table(int n)
 				dec = (z / 10);
 				dec = dec % 10;
 				uni = z % 10;
-				if (y >= 0)
-				{
-					_putchar(' ');
+				if ((y > 0) && (n > 0))
+				{ _putchar(' ');
 					if (!(cen >= 1))
 						_putchar(' ');
 					if (cen >= 1)
@@ -34,9 +33,10 @@ void print_times_table(int n)
 					_putchar('0' + uni);
 					if (!(y == n))
 						_putchar(','); }
-				else
-				{
-					_putchar('0' + z);
-					_putchar(','); } }
+				else if ((y == 0) && (n > 0))
+				{ _putchar('0' + z);
+					_putchar(','); }
+				else if ((y == 0) && (n == 0))
+					_putchar('0'); }
 			_putchar('\n'); } }
 }
