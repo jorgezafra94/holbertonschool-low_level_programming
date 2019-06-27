@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
- * more_numbers - check if a letter is uppercase
- * Return: the respective value if is a digit or not
+ * more_numbers - print numbers form 0 -14
+ * Return: the respective sequence 10 times
  */
 void more_numbers(void)
 {

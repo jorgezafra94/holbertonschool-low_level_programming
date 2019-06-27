@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
- * print_most_numbers - check if a letter is uppercase
- * Return: the respective value if is a digit or not
+ * print_most_numbers - print number from 0 -9 less 2 and 4
+ * Return: the respective sequence
  */
 void print_most_numbers(void)
 {
