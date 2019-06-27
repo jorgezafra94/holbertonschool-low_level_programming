@@ -6,23 +6,30 @@
  */
 void print_number(int n)
 {
-	int i, j, cont = 1, var1;
+	unsigned int j, cont = 1;
+	unsigned int var1, num, var2, var3 = 1;
 
 	if (n < 0)
 	{
-		_putchar('-');
-		n = n * (-1);
+		_putchar(45);
+		var2 = n * (-1);
 	}
-	for (i = 10; i <= n; i = i * 10)
+	else
 	{
-		cont++;
+		var2 = n;
 	}
-	i = i / 10;
+	num = var2;
+	while (num > 9)
+	{
+		num = num / 10;
+		cont++;
+		var3 = var3 * 10;
+	}
 	for (j = 1; j <= cont; j++)
 	{
-		var1 = n / i;
-		n = n % i;
-		i = i / 10;
+		var1 = var2 / var3;
+		var2 = var2 % var3;
+		var3 = var3 / 10;
 		_putchar ('0' + var1);
 	}
 }
