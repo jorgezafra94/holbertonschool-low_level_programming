@@ -6,7 +6,7 @@
  */
 void print_number(int n)
 {
-        int i, j, cont = 1, var1;
+	int i, j, cont = 1, var1;
 
 	if (n < 0)
 	{
