@@ -7,13 +7,16 @@
  */
 void puts2(char *str)
 {
-	int cont1 = 0;
+	int cont1 = 0, cont2 = 0;
 
 	while (*(str + cont1) != '\0')
 	{
-		if ((cont1 % 2) == 0)
-			_putchar(cont1 + '0');
 		cont1++;
+	}
+	while (cont2 < cont1)
+	{
+		_putchar(*(str + cont2));
+		cont2 = cont2 + 2;
 	}
 	_putchar('\n');
 }
