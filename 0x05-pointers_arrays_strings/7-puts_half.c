@@ -18,7 +18,7 @@ void puts_half(char *str)
 	else
 		cont2 = (cont1 - 1) / 2;
 
-	while (cont1 >= (cont2 + 1))
+	while (cont1 > cont2)
 	{
 		_putchar(*(str + cont2));
 		cont2++;
