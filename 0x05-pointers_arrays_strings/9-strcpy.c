@@ -15,10 +15,9 @@ char *_strcpy(char *dest, char *src)
 		*(dest + cont1) = *(src + cont1);
 		cont1++;
 	}
-	aux = cont1 + 1;
-	if (*(src + aux) == '\0')
+	if (*(src + cont1) == '\0')
 	{
-		*(dest + aux) = *(src + aux);
+		*(dest + cont1) = *(src + cont1);
 	}
 	return (dest);
 }
