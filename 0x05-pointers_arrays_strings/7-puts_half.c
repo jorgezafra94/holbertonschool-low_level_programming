@@ -16,7 +16,7 @@ void puts_half(char *str)
 	if ((cont1 % 2) == 0)
 		cont2 = cont1 / 2;
 	else
-		cont2 = (cont1 - 1) / 2;
+		cont2 = ((cont1 - 1) / 2) + 1;
 
 	while (cont1 > cont2)
 	{
