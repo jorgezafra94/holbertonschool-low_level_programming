@@ -8,7 +8,7 @@
 int _atoi(char *s)
 {
 	unsigned int cont1 = 0, a, b, c, num = 0, tam;
-	int aux1 = 1, aux2 = 1;
+	int aux2 = 1;
 
 	while (*(s + cont1) != '\0')
 	{
@@ -23,9 +23,7 @@ int _atoi(char *s)
 	{
 		if (!(*(s + b) >= '0' && *(s + b) <= '9'))
 			break;
-		aux1 = aux1 * 10;
 	}
-	aux1 = aux1 / 10;
 	for (c = 0; c < a; c++)
 	{
 		if (*(s + c) == '-')
@@ -34,8 +32,7 @@ int _atoi(char *s)
 	tam = b - a;
 	while (tam >= 1)
 	{
-		num = num + ((*(s + a) - '0') * aux1);
-		aux1 = aux1 / 10;
+		num = (num * 10) + (*(s + a) - '0');
 		a++;
 		tam--;
 	}
