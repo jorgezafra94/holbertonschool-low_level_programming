@@ -13,8 +13,8 @@ void print_array(int *a, int n)
 	for (; cont <= (n-1); cont++)
 	{
 		if(!(cont == (n-1)))
-			printf("%d, ", *(a + cont));
+			printf("%d, ", a[cont]);
 		else
-			printf("%d\n", *(a + cont));
+			printf("%d\n", a[cont]);
 	}
 }
