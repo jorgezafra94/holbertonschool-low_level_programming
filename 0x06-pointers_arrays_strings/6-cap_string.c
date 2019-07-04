@@ -27,5 +27,6 @@ char *cap_string(char *a)
 		}
 		cont1++;
 	}
+	*(a + cont1) = '\0';
 	return (a);
 }
