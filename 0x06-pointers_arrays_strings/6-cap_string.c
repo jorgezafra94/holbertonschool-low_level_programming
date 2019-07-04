@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * string_toupper - change lowercase letter into uppercase in special cases
+ * cap_string - change lowercase letter into uppercase in special cases
  * @a: an array of chars
  * Return: return an array with somes upper
  */
