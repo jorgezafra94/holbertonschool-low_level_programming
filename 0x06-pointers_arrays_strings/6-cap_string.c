@@ -17,11 +17,14 @@ char *cap_string(char *a)
 		{
 			if (cont1 == 0)
 				*(a + cont1) = (*(a + cont1) - 32);
-			for (cont2 = 0; cont2 < 13; cont2++)
+			if (cont1 > 0)
 			{
-				if (*(a + (cont1 - 1)) == array[cont2])
+				for (cont2 = 0; cont2 < 13; cont2++)
 				{
-					*(a + cont1) = (*(a + cont1)) - 32;
+					if (*(a + (cont1 - 1)) == array[cont2])
+					{
+						*(a + cont1) = (*(a + cont1)) - 32;
+					}
 				}
 			}
 		}
