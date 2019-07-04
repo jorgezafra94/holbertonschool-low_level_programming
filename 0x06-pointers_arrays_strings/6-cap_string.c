@@ -15,6 +15,8 @@ char *cap_string(char *a)
 	{
 		if (*(a + cont1) >= 97 && *(a + cont1) <= 122)
 		{
+			if (cont1 == 0)
+				*(a + cont1) = (*(a + cont1) - 32);
 			for (cont2 = 0; cont2 < 13; cont2++)
 			{
 				if(*(a + (cont1 - 1)) == array[cont2])
