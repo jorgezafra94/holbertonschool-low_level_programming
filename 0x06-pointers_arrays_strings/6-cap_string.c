@@ -16,8 +16,8 @@ char *cap_string(char *a)
 		if (*(a + cont1) >= 97 && *(a + cont1) <= 122)
 		{
 			if (cont1 == 0)
-				*(a + cont1) = (*(a + cont1) - 32);
-			if (cont1 > 0)
+				*(a + cont1) = (*(a + cont1)) - 32;
+			else if (cont1 > 0)
 			{
 				for (cont2 = 0; cont2 < 13; cont2++)
 				{
