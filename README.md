@@ -1,1 +1,1 @@
-*first steps with C program. srating with low level*
+*first steps with C program. starting with low level*
