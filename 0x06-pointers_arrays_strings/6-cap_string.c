@@ -19,7 +19,7 @@ char *cap_string(char *a)
 				*(a + cont1) = (*(a + cont1) - 32);
 			for (cont2 = 0; cont2 < 13; cont2++)
 			{
-				if(*(a + (cont1 - 1)) == array[cont2])
+				if (*(a + (cont1 - 1)) == array[cont2])
 				{
 					*(a + cont1) = (*(a + cont1)) - 32;
 				}
