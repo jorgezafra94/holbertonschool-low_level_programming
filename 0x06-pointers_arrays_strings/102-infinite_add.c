@@ -20,7 +20,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		grande = cont1;
 	else
 		grande = cont2;
-	r[grande + 1]='\0';
+	r[grande + 1] ='\0';
 	aux = grande;
 	while (grande >= 0)
 	{
@@ -42,5 +42,10 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	if ((size_r - 1) <= aux)
 		return (0);
 	else
-		return (r);
+	{
+		if (*(r + 0) == '0')
+			return (r + 1);
+		else
+			return (r);
+	}
 }
