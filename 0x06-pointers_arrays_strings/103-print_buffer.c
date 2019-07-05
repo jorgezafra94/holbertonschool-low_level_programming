@@ -29,7 +29,7 @@ void print_buffer(char *b, int size)
 			}
 			for (k = i; k < (10 + i); k++)
 			{
-				if (*(b + k) <= 20 && *(b + k) >= 0)
+				if (!(*(b + k) <= 126 && *(b + k) >= 32))
 					printf(".");
 				else
 					printf("%c", *(b + k));
