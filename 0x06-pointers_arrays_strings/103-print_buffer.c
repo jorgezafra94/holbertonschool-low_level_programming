@@ -39,6 +39,6 @@ void print_buffer(char *b, int size)
 			}
 			printf("\n");
 		}
-		i = i + 10;
+		i++;
 	}
 }
