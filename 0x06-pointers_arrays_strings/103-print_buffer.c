@@ -37,8 +37,8 @@ void print_buffer(char *b, int size)
 				if (cont1 >= size)
 					break;
 			}
-			printf("\n");
 		}
-		i++;
+		printf("\n");
+		i = i + 10;
 	}
 }
