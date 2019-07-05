@@ -9,9 +9,10 @@
 void print_buffer(char *b, int size)
 {
 	int i = 0, j, k, m, cont1 = 0, cont2 = 0;
+
 	while (i <= size)
 	{
-		if((i % 10) == 0)
+		if ((i % 10) == 0)
 		{
 			printf("%.8x: ", i);
 			for (j = i; j < (10 + i); j = j + 2)
@@ -28,7 +29,7 @@ void print_buffer(char *b, int size)
 			}
 			for (k = i; k < (10 + i); k++)
 			{
-				if ( *(b + k) <= 20 && *(b + k) >= 0)
+				if (*(b + k) <= 20 && *(b + k) >= 0)
 					printf(".");
 				else
 					printf("%c", *(b + k));
