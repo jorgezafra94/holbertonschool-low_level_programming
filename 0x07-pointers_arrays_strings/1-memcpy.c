@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 /**
  * _memcpy - prints the add of two numbers
  * @dest: destiny array
