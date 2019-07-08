@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * infinite_add - prints the add of two numbers
+ * memset - change buffer
  * @s: char array
  * @b: char value
  * @n: limit
