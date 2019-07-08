@@ -10,7 +10,11 @@ void print_buffer(char *b, int size)
 {
 	int i = 0, j, k, m, cont1 = 0, cont2 = 0;
 
-	while (i <= size)
+	if (size <= 0)
+	{
+		printf("\n");
+	}
+	while (i < size)
 	{
 		if ((i % 10) == 0)
 		{
@@ -19,7 +23,7 @@ void print_buffer(char *b, int size)
 			{
 				for (m = 0; m < 2; m++)
 				{
-					if (cont2 >= size)
+					if (cont2 > (size - 1))
 						printf("  ");
 					else
 					{ printf("%.2x", *(b + (j + m)));
@@ -34,11 +38,11 @@ void print_buffer(char *b, int size)
 				else
 					printf("%c", *(b + k));
 				cont1++;
-				if (cont1 >= size)
+				if (cont1 > (size - 1))
 					break;
 			}
+			printf("\n");
 		}
-		printf("\n");
 		i = i + 10;
 	}
 }
