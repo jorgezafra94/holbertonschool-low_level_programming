@@ -23,6 +23,7 @@ char *_strstr(char *haystack, char *needle)
 				if (prueba == aux)
 				{
 					ini = cont2 - aux;
+					break;
 				}
 			}
 			else
@@ -31,6 +32,7 @@ char *_strstr(char *haystack, char *needle)
 				cont2++;
 			}
 		}
+		break;
 	}
 	if (prueba == aux)
 		return (haystack + ini);
