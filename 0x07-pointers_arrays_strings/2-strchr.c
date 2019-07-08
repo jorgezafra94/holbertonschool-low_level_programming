@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 /**
  * _strchr - prints from the character found
  * @s: source array
@@ -15,7 +14,7 @@ char *_strchr(char *s, char c)
 		{
 			return (s);
 		}
-		s++;
+		++s;
 	}
-	return (NULL);
+	return (0);
 }
