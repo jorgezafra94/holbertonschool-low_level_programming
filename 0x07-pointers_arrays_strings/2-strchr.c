@@ -7,19 +7,15 @@
  */
 char *_strchr(char *s, char c)
 {
-	int cont1 = 0, cont2 = -1;
+	int cont1 = 0;
 
 	while (*(s + cont1) != '\0')
 	{
 		if (s[cont1] == c)
 		{
-			cont2 = cont1;
-			break;
+			return (s + cont1);
 		}
 		cont1++;
 	}
-	if (cont2 != -1)
-		return (s + cont2);
-	else
-		return (0);
+	return (0);
 }
