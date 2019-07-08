@@ -26,7 +26,7 @@ char *_strpbrk(char *s, char *accept)
 			break;
 		cont1++;
 	}
-	if ( prueba != 0)
+	if (prueba != 0)
 		return (s + cont1);
 	else
 		return (0);
