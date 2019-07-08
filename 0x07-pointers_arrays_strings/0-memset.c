@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * memset - change buffer
+ * _memset - change buffer
  * @s: char array
  * @b: char value
  * @n: limit
