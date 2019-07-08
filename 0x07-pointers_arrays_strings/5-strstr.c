@@ -28,6 +28,7 @@ char *_strstr(char *haystack, char *needle)
 			}
 			else
 			{
+				prueba = 0;
 				cont1 = 0;
 				cont2++;
 			}
