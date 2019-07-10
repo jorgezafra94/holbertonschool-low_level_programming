@@ -9,13 +9,15 @@
 int fun1(int num, int s)
 {
 	if ((s * s) == num)
+	{
 		return (s);
+	}
 	else
 	{
 		if (s * s > num)
 			return (-1);
 		else
-			return(fun1(num, s + 1));
+			return (fun1(num, s + 1));
 	}
 }
 
@@ -29,5 +31,5 @@ int _sqrt_recursion(int n)
 	if (n < 0)
 		return (-1);
 	else
-		return(fun1 (n, 0));
+		return (fun1 (n, 0));
 }
