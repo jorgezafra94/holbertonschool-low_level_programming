@@ -26,7 +26,7 @@ int funp(int num, int s)
 }
 
 /**
- * _is_prime_number - gives if it is prime number
+ * is_prime_number - gives if it is prime number
  * @n: number
  * Return: 1 if is prime or 0 if not
  */
