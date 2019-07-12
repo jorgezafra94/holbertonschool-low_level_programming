@@ -8,45 +8,34 @@
  */
 int main(int argc, char *argv[])
 {
-	unsigned int m, c1, cont;
-        int n;
-
-	n = 0;
-	cont = 0;
+	int n = 0, c = 0;
 
 	if (argc == 2)
 	{
 		n = atoi(argv[1]);
-		if(n >= 0)
+		if (n >= 0)
 		{
-			m = n;
-
-			for (c1 = 0; m >=  25 && m != 0; c1++)
+			for (; n >= 25; c++)
 			{
-				m = m - 25;
-				cont++;
+				n = n - 25;
 			}
-			for (c1 = 0; m >= 10 && m != 0; c1++)
-                        {
-				m = m - 10;
-				cont++;
-                        }
-			for (c1 = 0; m >= 5 && m != 0; c1++)
+			for (; n >= 10; c++)
 			{
-				m = m - 5;
-				cont++;
+				n = n - 10;
 			}
-			for (c1 = 0; m >= 2 && m != 0; c1++)
+			for (; n >= 5; c++)
 			{
-				m = m - 2;
-				cont++;
+				n = n - 5;
 			}
-			for (c1 = 0; m >= 1 && m != 0; c1++)
+			for (; n >= 2; c++)
 			{
-				m = m - 1;
-				cont++;
+				n = n - 2;
 			}
-			printf("%d\n", cont);
+			for (; n >= 1; c++)
+			{
+				n = n - 1;
+			}
+			printf("%d\n", c);
 		}
 		return (0);
 	}
