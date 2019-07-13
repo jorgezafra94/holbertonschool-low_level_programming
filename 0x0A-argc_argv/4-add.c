@@ -11,24 +11,20 @@ int main(int argc, char *argv[])
 	int c, d, sum;
 
 	sum = 0;
-
-	if (argc > 1)
+	for (c = 1; c < argc; c++)
 	{
-		for (c = 1; c < argc; c++)
+		d = 0;
+		while (argv[c][d] != '\0')
 		{
-			d = 0;
-			while (argv[c][d])
+			if (argv[c][d] < '0' || argv[c][d] > '9')
 			{
-				if (argv[c][d] < '0' || argv[c][d] > '9')
-				{
-					printf("Error\n");
-					return (1);
-				}
-				d++;
+				printf("Error\n");
+				return (1);
 			}
-			sum = sum + atoi(argv[c]);
+			d++;
 		}
+		sum = sum + atoi(argv[c]);
 	}
-	printf("%d/n", sum);
+	printf("%d\n", sum);
 	return (sum);
 }
