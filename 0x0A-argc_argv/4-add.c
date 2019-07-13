@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 			d = 0;
 			while (argv[c][d] != '\0')
 			{
-				if (!(argv[c][d] >= '0' && argv[c][d] <= '9'))
+				if (argv[c][d] < '0' || argv[c][d] > '9')
 				{
 					printf("Error\n");
 					return (1);
