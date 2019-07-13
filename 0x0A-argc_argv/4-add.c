@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 /**
  * main - Entry Point
  * @argc: number of arguments in the command line
@@ -16,7 +17,7 @@ int main(int argc, char *argv[])
 		d = 0;
 		while (argv[c][d] != '\0')
 		{
-			if (argv[c][d] < '0' || argv[c][d] > '9')
+			if (isdigit(argv[c][d]) == 0)
 			{
 				printf("Error\n");
 				return (1);
