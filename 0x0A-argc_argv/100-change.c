@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 				n = n - 1;
 			}
 		}
-		printf("%d", c);
+		printf("%d\n", c);
 		return (0);
 	}
 	else
