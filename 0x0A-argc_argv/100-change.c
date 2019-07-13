@@ -1,4 +1,4 @@
-#include <stdio.h>
+B#include <stdio.h>
 #include <stdlib.h>
 /**
  * main - Entry Point
@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 	if (argc == 2)
 	{
 		n = atoi(argv[1]);
-		if (n >= 0)
+		if (n > 0)
 		{
 			for (; n >= 25; c++)
 			{
@@ -35,8 +35,8 @@ int main(int argc, char *argv[])
 			{
 				n = n - 1;
 			}
-			printf("%d\n", c);
 		}
+		printf("%d", c);
 		return (0);
 	}
 	else
