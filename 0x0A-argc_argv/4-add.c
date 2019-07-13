@@ -9,13 +9,12 @@
  */
 int main(int argc, char *argv[])
 {
-	int c, d, sum;
+	int c, d, sum = 0;
 
-	sum = 0;
 	for (c = 1; c < argc; c++)
 	{
 		d = 0;
-		while (argv[c][d] != '\0')
+		while (argv[c][d])
 		{
 			if (isdigit(argv[c][d]) == 0)
 			{
