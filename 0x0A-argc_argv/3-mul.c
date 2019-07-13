@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 {
 	int cont, mul = 1;
 
-	if (argc > 3)
+	if (argc == 3)
 	{
 		for (cont = 1; cont < 3; cont++)
 		{
