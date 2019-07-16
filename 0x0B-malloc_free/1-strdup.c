@@ -11,7 +11,7 @@ char *_strdup(char *str)
 
 	if (!str)
 	{
-		return (0);
+		return (NULL);
 	}
 	else
 	{
@@ -23,7 +23,7 @@ char *_strdup(char *str)
 		copy = malloc(cont);
 		if (!copy)
 		{
-			return (0);
+			return (NULL);
 		}
 		else
 		{
