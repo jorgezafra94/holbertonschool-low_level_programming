@@ -43,6 +43,5 @@ char *argstostr(int ac, char **av)
 		i++;
 	}
 /* asign the value of each char and the null replace by \n */
-	p[aux] = '\0';
 	return (p);
 }
