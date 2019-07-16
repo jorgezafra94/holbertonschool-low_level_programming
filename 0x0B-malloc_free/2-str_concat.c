@@ -1,3 +1,4 @@
+#include "holberton.h"
 #include <stdlib.h>
 /**
  * str_concat - create an array using malloc
@@ -18,7 +19,7 @@ char *str_concat(char *s1, char *s2)
 	{
 		b++;
 	}
-	p = malloc(a + b);
+	p = malloc(a + b + 1);
 	if (!p)
 	{
 		return (0);
