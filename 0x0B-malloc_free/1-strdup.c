@@ -21,14 +21,14 @@ char *_strdup(char *str)
 		{
 			cont++;
 		}
-		copy = malloc(cont);
+		copy = malloc(cont + 1);
 		if (!copy)
 		{
 			return (NULL);
 		}
 		else
 		{
-			for (f = 0; f < cont; f++)
+			for (f = 0; f <= cont; f++)
 			{
 				copy[f] = str[f];
 			}
