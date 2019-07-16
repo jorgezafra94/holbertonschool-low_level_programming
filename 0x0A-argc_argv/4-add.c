@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 /**
  * main - Entry Point
  * @argc: number of arguments in the command line
@@ -8,32 +9,22 @@
  */
 int main(int argc, char *argv[])
 {
-	int c, d, sum;
+	int c, d, sum = 0;
 
-	sum = 0;
-
-	if (argc > 1)
+	for (c = 1; c < argc; c++)
 	{
-		for (c = 1; c < argc; c++)
+		d = 0;
+		while (argv[c][d])
 		{
-			d = 0;
-			while (argv[c][d] != '\0')
+			if (isdigit(argv[c][d]) == 0)
 			{
-				if (!(argv[c][d] >= '0' && argv[c][d] <= '9'))
-				{
-					printf("Error\n");
-					return (1);
-				}
-				d++;
+				printf("Error\n");
+				return (1);
 			}
-			sum = sum + atoi(argv[c]);
+			d++;
 		}
-		printf("%d\n", sum);
-		return (0);
+		sum = sum + atoi(argv[c]);
 	}
-	else
-	{
-		printf("0\n");
-		return (0);
-	}
+	printf("%d\n", sum);
+	return (sum);
 }
