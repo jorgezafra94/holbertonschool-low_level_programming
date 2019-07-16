@@ -1,3 +1,4 @@
+#include "holberton.h"
 #include <stdlib.h>
 /**
  * _strdup - create an array using malloc
