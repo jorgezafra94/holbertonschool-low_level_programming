@@ -11,6 +11,8 @@ char *argstostr(int ac, char **av)
 	int j = 0, i = 0, cont = 0, aux = 0;
 	char *p;
 
+	if (ac == 0 || av == NULL)
+		return (NULL);
 	while (i < ac)
 	{
 		j = 0;
@@ -42,6 +44,7 @@ char *argstostr(int ac, char **av)
 		aux++;
 		i++;
 	}
+	p[aux] = '\0';
 /* asign the value of each char and the null replace by \n */
 	return (p);
 }
