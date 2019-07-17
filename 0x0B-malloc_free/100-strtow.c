@@ -48,14 +48,13 @@ int words(char *str)
 char **strtow(char *str)
 {
 	char **p;
-	int w = 0, c = 0, l = 0, a = 0, j = 0;
+	int w = 0, c = 0, l = 0, a = 0, j = 0, var;
 
+	var = 0;
 	if (*str == '\0' || str == NULL)
-	{
 		return (NULL);
-	}
 	w = words(str);
-	p = (char **) malloc(w * sizeof(char *));
+	p = (char **) malloc((w + 1) * sizeof(char *));
 	if (!p)
 	{
 		free(p);
@@ -67,6 +66,7 @@ char **strtow(char *str)
 			c++;
 		else
 		{
+			var = 1;
 			l = letters(str + c);
 			p[a] = (char *) malloc(sizeof(char) * (l + 1));
 			if (!p[a])
@@ -82,6 +82,8 @@ char **strtow(char *str)
 			a++;
 		}
 	}
+	if (var != 1)
+		return (NULL);
 	p[a] = NULL;
 	return (p);
 }
