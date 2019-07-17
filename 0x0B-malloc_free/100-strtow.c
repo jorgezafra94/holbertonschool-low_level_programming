@@ -55,7 +55,7 @@ char **strtow(char *str)
 		return (NULL);
 	}
 	w = words(str);
-	p = (char **) malloc((w + 1) * sizeof(char *));
+	p = (char **) malloc(w * sizeof(char *));
 	if (!p)
 	{
 		free(p);
