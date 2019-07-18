@@ -28,14 +28,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		cont2++;
 	if (n >= cont2)
 		n = cont2;
-	p = malloc(cont1 + n);
+	p = malloc(cont1 + n + 1);
 	if (!p)
 		return (NULL);
 	for (i = 0; i < cont1; i++)
 	{
 		p[i] = s1[i];
 	}
-	for (i = cont1; i < (cont1 + n); i++)
+	for (i = cont1; i <= (cont1 + n); i++)
 	{
 		p[i] = s2[i - cont1];
 	}
