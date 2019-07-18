@@ -9,13 +9,21 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int cont1 = 0, cont2 = 0, i;
+	unsigned int cont1 = 0, cont2 = 0, i, aux = 0;
 	char *p = NULL;
 
 	if (s1 == NULL)
+	{
 		s1 = "";
+		aux++;
+	}
 	if (s2 == NULL)
+	{
 		s2 = "";
+		aux++
+	}
+	if (aux == 2)
+		return (NULL);
 	if (n == 0)
 		return (NULL);
 	while (s1[cont1] != '\0')
