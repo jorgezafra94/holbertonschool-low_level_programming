@@ -10,9 +10,9 @@ char *_memset(char *s, char b, unsigned int n)
 {
 	unsigned int i = 0;
 
-	if (n >= 98)
+	if (n > 98)
 	{
-		n = 97;
+		n = 98;
 	}
 	while (i < n)
 	{
