@@ -1,6 +1,5 @@
 #include "dog.h"
 #include <stdlib.h>
-#include <stdio.h>
 /**
  * new_dog - creates a new pointer of dog_t type
  * @name: member 1
@@ -29,6 +28,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (!(*p).name)
 	{
 		free((*p).name);
+		free(p);
 		return (NULL);
 	}
 	(*p).owner = malloc(c2 + 1);
@@ -36,6 +36,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	{
 		free((*p).name);
 		free((*p).owner);
+		free(p);
 		return (0);
 	}
 	for (i = 0; i < c1; i++)
