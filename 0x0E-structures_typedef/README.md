@@ -1,4 +1,4 @@
-* first steps with Structures and typedef *
+*first steps with Structures and typedef *
 we are going to resolve these exercises
 
 0- Define a new type struct dog with the following elements:
