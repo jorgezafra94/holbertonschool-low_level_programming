@@ -13,6 +13,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 	struct dog *p = NULL;
 	int c1 = 0, c2 = 0, i;
 
+	if (name == NULL || owner == NULL)
+		return (NULL);
 	while (name[c1])
 		c1++;
 	while (owner[c2])
@@ -21,17 +23,18 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (!p)
 	{
 		free(p);
-		return (0);
+		return (NULL);
 	}
 	(*p).name = malloc(c1 + 1);
 	if (!(*p).name)
 	{
 		free((*p).name);
-		return (0);
+		return (NULL);
 	}
 	(*p).owner = malloc(c2 + 1);
 	if (!(*p).owner)
 	{
+		free((*p).name);
 		free((*p).owner);
 		return (0);
 	}
