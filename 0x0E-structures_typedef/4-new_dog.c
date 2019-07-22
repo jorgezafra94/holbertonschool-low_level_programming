@@ -39,11 +39,11 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(p);
 		return (0);
 	}
-	for (i = 0; i < c1; i++)
+	for (i = 0; i <= c1; i++)
 	{
 		(*p).name[i] = name[i];
 	}
-	for (i = 0; i < c2; i++)
+	for (i = 0; i <= c2; i++)
 	{
 		(*p).owner[i] = owner[i];
 	}
