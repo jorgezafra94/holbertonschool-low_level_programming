@@ -9,7 +9,6 @@ int main(int argc, char *argv[])
 {
 	char a;
 	int x = 0, y = 0, res = 0;
-	int (*p)(int, int);
 
 	if (argv[2][1] != '\0')
 	{
@@ -29,8 +28,7 @@ int main(int argc, char *argv[])
 	}
 	x = atoi(argv[1]);
 	y = atoi(argv[3]);
-	p = get_op_func(argv[2]);
-	res = p(x, y);
+	res = (get_op_func(argv[2]))(x, y);
 	printf("%d\n", res);
 	return (0);
 }
