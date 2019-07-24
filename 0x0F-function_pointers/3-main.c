@@ -1,11 +1,10 @@
 #include "3-calc.h"
 /**
- *
- *
- *
- *
+ * main - realice the operation
+ * @argc: amount of arguments
+ * @argv: arguments
  */
-int main(int argc, char *argv[])
+void main(int argc, char *argv[])
 {
 	char a;
 	int x = 0, y = 0, res = 0;
@@ -27,5 +26,4 @@ int main(int argc, char *argv[])
 	p = get_op_func(argv[2]);
 	res = p(x, y);
 	printf("%d\n", res);
-	return (res);
 }
