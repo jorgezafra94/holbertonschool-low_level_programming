@@ -27,5 +27,5 @@ int main(int argc, char *argv[])
 	p = get_op_func(argv[2]);
 	res = p(x, y);
 	printf("%d\n", res);
-	return (res);
+	return (0);
 }
