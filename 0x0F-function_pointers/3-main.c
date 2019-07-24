@@ -11,7 +11,11 @@ int main(int argc, char *argv[])
 	int x = 0, y = 0, res = 0;
 	int (*p)(int, int);
 
-	a = argv[2][0];
+	if (argv[2][1] != '\0')
+	{
+		printf("Error\n");
+		exit(99);
+	}
 	if (argc != 4)
 	{
 		printf("Error\n");
