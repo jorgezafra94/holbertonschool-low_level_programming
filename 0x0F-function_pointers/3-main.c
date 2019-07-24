@@ -3,8 +3,9 @@
  * main - realice the operation
  * @argc: amount of arguments
  * @argv: arguments
+ * Return: return the value of operation
  */
-void main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	char a;
 	int x = 0, y = 0, res = 0;
@@ -26,4 +27,5 @@ void main(int argc, char *argv[])
 	p = get_op_func(argv[2]);
 	res = p(x, y);
 	printf("%d\n", res);
+	return (res);
 }
