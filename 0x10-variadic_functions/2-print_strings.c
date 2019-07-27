@@ -30,8 +30,9 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		}
 		else
 		{
-			printf("%s\n", nom);
+			printf("%s", nom);
 		}
 	}
+	printf("\n");
 	va_end(selements);
 }
