@@ -5,14 +5,14 @@ global main
 main:
 	  mov rax, 1        	; write(
 	  mov rdi, 1        	;   STDOUT_FILENO,
-	  mov rsi, msg      	;   "Hello, world!\n",
-	  mov rdx, msglen   	;   sizeof("Hello, world!\n")
+	  mov rsi, msg      	;   "Hello, holberton!\n",
+	  mov rdx, msglen   	;   sizeof("Hello, holberton!\n")
 	  syscall           	; );
 
 	  mov rax, 60       	; exit(
 	  mov rdi, 0        	;   EXIT_SUCCESS
-	  syscall           	; );
+	  syscall
 
 	section .rodata
-msg:	 db "Hello, world!", 10
+msg:	 db "Hello, Holberton", 10
 msglen:	 equ $ - msg
