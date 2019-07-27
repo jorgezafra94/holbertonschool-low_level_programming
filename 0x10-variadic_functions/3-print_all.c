@@ -32,8 +32,7 @@ void pr_string(va_list valist)
 	valor = va_arg(valist, char *);
 	if (valor == NULL)
 	{
-		printf("(nil)");
-		return;
+		valor = "(nil)";
 	}
 	printf("%s", valor);
 }
