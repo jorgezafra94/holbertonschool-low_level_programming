@@ -30,6 +30,11 @@ void pr_string(va_list valist)
 	char *valor;
 
 	valor = va_arg(valist, char *);
+	if (valor == NULL)
+	{
+		printf("(nil)");
+		return;
+	}
 	printf("%s", valor);
 }
 /**
@@ -66,8 +71,11 @@ void print_all(const char * const format, ...)
 		{
 			if (format[c1] == L[c2].c)
 			{
-				if (!(c3 == 0))
+			        switch (c3)
 				{
+				case 0:
+					break;
+				default:
 					printf(", ");
 				}
 				L[c2].fun(elementos);
