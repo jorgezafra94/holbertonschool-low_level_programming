@@ -64,14 +64,14 @@ void print_all(const char * const format, ...)
 	va_list elementos;
 
 	va_start(elementos, format);
-	while (format[c1] != '\0')
+	while (format[c1] != '\0' && format)
 	{
 		c2 = 0;
 		while (c2 < 4)
 		{
 			if (format[c1] == L[c2].c)
 			{
-			        switch (c3)
+				switch (c3)
 				{
 				case 0:
 					break;
