@@ -53,12 +53,12 @@ void pr_float(va_list valist)
  */
 void print_all(const char * const format, ...)
 {
-	lista L[4] = {
+	lista L[5] = {
 		{'c', pr_char},
 		{'i', pr_int},
 		{'s', pr_string},
 		{'f', pr_float},
-		{NULL, NULL}
+		{'\0', NULL}
 	};
 	int c1 = 0, c2 = 0, c3 = 0;
 	va_list elementos;
