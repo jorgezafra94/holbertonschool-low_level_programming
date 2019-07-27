@@ -10,11 +10,6 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	unsigned int i;
 	char *nom;
 
-	if (n == 0)
-	{
-		va_end(selements);
-		return;
-	}
 	va_start(selements, n);
 	for (i = 0; i < n; i++)
 	{
