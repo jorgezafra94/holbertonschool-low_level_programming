@@ -57,7 +57,8 @@ void print_all(const char * const format, ...)
 		{'c', pr_char},
 		{'i', pr_int},
 		{'s', pr_string},
-		{'f', pr_float}
+		{'f', pr_float},
+		{NULL, NULL}
 	};
 	int c1 = 0, c2 = 0, c3 = 0;
 	va_list elementos;
