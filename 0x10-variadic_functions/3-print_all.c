@@ -57,8 +57,7 @@ void print_all(const char * const format, ...)
 		{'c', pr_char},
 		{'i', pr_int},
 		{'s', pr_string},
-		{'f', pr_float},
-		{'\0', NULL}
+		{'f', pr_float}
 	};
 	int c1 = 0, c2 = 0, c3 = 0;
 	va_list elementos;
@@ -86,6 +85,6 @@ void print_all(const char * const format, ...)
 		}
 		c1++;
 	}
-	printf("\n");
 	va_end(elementos);
+	printf("\n");
 }
