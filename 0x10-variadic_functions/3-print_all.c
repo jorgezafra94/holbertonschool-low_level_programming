@@ -63,7 +63,7 @@ void print_all(const char * const format, ...)
 	va_list elementos;
 
 	va_start(elementos, format);
-	while (format[c1] != '\0' && format)
+	while (format && format[c1] != '\0')
 	{
 		c2 = 0;
 		while (L[c2].c != '\0')
