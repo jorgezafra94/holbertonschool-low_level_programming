@@ -53,7 +53,7 @@ void pr_float(va_list valist)
  */
 void print_all(const char * const format, ...)
 {
-	lista L[5] = {
+	lista L[] = {
 		{'c', pr_char},
 		{'i', pr_int},
 		{'s', pr_string},
@@ -67,7 +67,7 @@ void print_all(const char * const format, ...)
 	while (format[c1] != '\0' && format)
 	{
 		c2 = 0;
-		while (c2 < 4)
+		while (L[c2].c != '\0')
 		{
 			if (format[c1] == L[c2].c)
 			{
