@@ -11,7 +11,7 @@
  */
 typedef struct op
 {
-	char c;
+	char *c;
 	void (*fun)(va_list);
 } lista;
 int _putchar(char c);
