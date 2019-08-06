@@ -62,6 +62,5 @@ size_t print_listint_safe(const listint_t *head)
 		}
 		printf("[%p] %d\n", (void *)m, m->n);
 	}
-	free_aux(&g1);
 	return (c);
 }
