@@ -27,8 +27,8 @@ typedef struct listint_s
 typedef struct aux
 {
 	void *p;
-	struct aux *sig;
-} aux_list;
+	struct aux *next;
+} listp_t;
 
 size_t print_listint(const listint_t *h);
 size_t listint_len(const listint_t *h);
