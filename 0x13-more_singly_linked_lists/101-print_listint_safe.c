@@ -3,7 +3,7 @@
  * free_aux - free each element of the linked aux_list
  * @a: pointer to the linked list
  */
-void free_aux(aux_list **a)
+void free_aux(aux_list *a)
 {
 	aux_list *aux;
 
@@ -11,10 +11,10 @@ void free_aux(aux_list **a)
 	{
 		return;
 	}
-	while (*a != NULL)
+	while (a != NULL)
 	{
-		aux = *a;
-		*a = (*a)->sig;
+		aux = a;
+		a = a->sig;
 		free(aux);
 	}
 }
@@ -25,42 +25,33 @@ void free_aux(aux_list **a)
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	int c = 0;
-	listint_t *m;
-	aux_list *g1 = NULL, *temp, *g2;
+	int cont = 0;
+	aux_list *a, *b, *t;
 
 	if (!head)
-		return (c);
-	m = (listint_t *)head;
-	for (; m != NULL; g2 = g1, c++, m = m->next)
+		return (0);
+	a = NULL;
+        for (; head != NULL; cont++, head = head->next)
 	{
-		temp = malloc(sizeof(aux_list));
-		if (!temp)
+		t = malloc(sizeof(aux_list));
+		if (!t)
 			exit(98);
-		temp->p = m;
-		temp->sig = NULL;
-		if (c == 0)
-			g1 = temp;
-		else
+		t->p = (void *)head;
+		t->sig =a;
+		a = t;
+		b = a->sig;
+		while (b != NULL)
 		{
-			while (g2->sig != NULL)
+			if (head == b->p)
 			{
-				if (m == g2->p)
-				{printf("-> [%p] %d\n", (void *)m, m->n);
-					free_aux(&g1);
-					return (c); }
-				g2 = g2->sig;
+				printf("-> [%p] %d\n", (void *)head, head->n);
+				free_aux(a);
+				return (cont);
 			}
-			if (g2->sig == NULL)
-			{
-				if (m == g2->p)
-				{ printf("-> [%p] %d\n", (void *)m, m->n);
-					free_aux(&g1);
-					return (c); }
-			}
-			g2->sig = temp;
+			b = b->sig;
 		}
-		printf("[%p] %d\n", (void *)m, m->n);
+		printf("[%p]  %d\n", (void *)head, head->n);
 	}
-	return (c);
+	free_aux(a);
+	return (cont);
 }
