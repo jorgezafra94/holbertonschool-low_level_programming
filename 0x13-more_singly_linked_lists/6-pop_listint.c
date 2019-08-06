@@ -15,8 +15,10 @@ int pop_listint(listint_t **head)
 /*when get the last element*/
 	if ((*head)->next == NULL)
 	{
-		a = (*head)->n;
-		free(*head);
+		aux = *head;
+		a = aux->n;
+		*head = (*head)->next;
+		free(aux);
 	}
 	/* all the other previous elements*/
 	else
