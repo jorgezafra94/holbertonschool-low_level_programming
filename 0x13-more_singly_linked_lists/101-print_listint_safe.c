@@ -49,9 +49,9 @@ size_t print_listint_safe(const listint_t *head)
 	aux_list *guardar1, *temp, *guardar2;
 
 	if (!head)
-		return (0);
-	guardar1 = NULL;
-	nuevo = (listint_t *)head;
+		return (cont);
+	nuevo = (listint_t *)head->next;
+	imp(1, (listint_t *)head);
 	while (nuevo != NULL)
 	{
 		temp = malloc(sizeof(aux_list));
@@ -60,7 +60,7 @@ size_t print_listint_safe(const listint_t *head)
 		if (cont == 0)
 		{
 			temp->p = (aux_list *)head;
-			temp->sig = guardar1;
+			temp->sig = NULL;
 			guardar1 = temp;
 		}
 		else
@@ -74,12 +74,12 @@ size_t print_listint_safe(const listint_t *head)
 				guardar2 = guardar2->sig;
 			}
 			temp->p = nuevo;
-			temp->sig = guardar2->sig;
+			temp->sig = NULL;
 			guardar2->sig = temp;
+			imp(1, nuevo);
+			nuevo = nuevo->next;
 		}
 		guardar2 = guardar1;
-		imp(1, nuevo);
-		nuevo = nuevo->next;
 		cont++;
 	}
 	free_aux(guardar1);
