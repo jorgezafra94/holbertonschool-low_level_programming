@@ -43,7 +43,7 @@ void imp(int a, listint_t *nuevo)
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	int cont = 1;
+	int cont = 0;
 	listint_t *nuevo;
 	aux_list *guardar1, *temp, *guardar2;
 
@@ -51,12 +51,12 @@ size_t print_listint_safe(const listint_t *head)
 		return (0);
 	guardar1 = NULL;
 	nuevo = (listint_t *)head;
-	for (; nuevo != NULL; cont++)
+	while (nuevo != NULL)
 	{
 		temp = malloc(sizeof(aux_list));
 		if (!temp)
 			exit(98);
-		if (cont == 1)
+		if (cont == 0)
 		{
 			temp->p = (aux_list *)head;
 			temp->sig = guardar1;
@@ -79,8 +79,8 @@ size_t print_listint_safe(const listint_t *head)
 		guardar2 = guardar1;
 		imp(1, nuevo);
 		nuevo = nuevo->next;
+		cont++;
 	}
 	free_aux(guardar1);
 	return (cont);
-
 }
