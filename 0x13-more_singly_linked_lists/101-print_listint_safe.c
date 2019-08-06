@@ -3,16 +3,18 @@
  * free_aux - free each element of the linked aux_list
  * @a: pointer to the linked list
  */
-void free_aux(aux_list *a)
+void free_aux(aux_list **a)
 {
 	aux_list *aux;
 
 	if (a == NULL)
-		return;
-	while (a != NULL)
 	{
-		aux = a;
-		a = a->sig;
+		return;
+	}
+	while (*a != NULL)
+	{
+		aux = *a;
+		*a = (*a)->sig;
 		free(aux);
 	}
 }
@@ -44,26 +46,22 @@ size_t print_listint_safe(const listint_t *head)
 			while (g2->sig != NULL)
 			{
 				if (m == g2->p)
-				{
-					printf("-> [%p] %d\n", (void *)m, m->n);
-					free_aux(g1);
-					return (c);
-				}
+				{printf("-> [%p] %d\n", (void *)m, m->n);
+					free_aux(&g1);
+					return (c); }
 				g2 = g2->sig;
 			}
 			if (g2->sig == NULL)
 			{
 				if (m == g2->p)
-				{
-					printf("-> [%p] %d\n", (void *)m, m->n);
-					free_aux(g1);
-					return (c);
-				}
+				{ printf("-> [%p] %d\n", (void *)m, m->n);
+					free_aux(&g1);
+					return (c); }
 			}
 			g2->sig = temp;
 		}
 		printf("[%p] %d\n", (void *)m, m->n);
 	}
-	free_aux(g1);
+	free_aux(&g1);
 	return (c);
 }
