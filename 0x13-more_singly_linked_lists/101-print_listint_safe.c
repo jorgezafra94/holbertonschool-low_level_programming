@@ -1,20 +1,20 @@
 #include "lists.h"
 /**
  * free_aux - free each element of the linked aux_list
- * @a: pointer to the linked list
+ * @pointer: pointer to the linked list
  */
-void free_aux(aux_list *a)
+void free_aux(aux_list **pointer)
 {
 	aux_list *aux;
 
-	if (a == NULL)
+	if (pointer == NULL)
 	{
 		return;
 	}
-	while (a != NULL)
+	while (*pointer != NULL)
 	{
-		aux = a;
-		a = a->sig;
+		aux = *pointer;
+		*pointer = (*pointer)->sig;
 		free(aux);
 	}
 }
@@ -28,8 +28,6 @@ size_t print_listint_safe(const listint_t *head)
 	int cont = 0;
 	aux_list *a, *b, *t;
 
-	if (!head)
-		return (0);
 	a = NULL;
 	while (head != NULL)
 	{
@@ -46,7 +44,7 @@ size_t print_listint_safe(const listint_t *head)
 			if (head == b->p)
 			{
 				printf("-> [%p] %d\n", (void *)head, head->n);
-				free_aux(a);
+				free_aux(&a);
 				return (cont);
 			}
 		}
@@ -54,6 +52,6 @@ size_t print_listint_safe(const listint_t *head)
 		cont++;
 		head = head->next;
 	}
-	free_aux(a);
+	free_aux(&a);
 	return (cont);
 }
