@@ -9,6 +9,9 @@ int pop_listint(listint_t **head)
 	int a = 0;
 	listint_t *aux;
 
+	if (*head == NULL || head == NULL)
+		return (a);
+
 /*when get the last element*/
 	if ((*head)->next == NULL)
 	{
