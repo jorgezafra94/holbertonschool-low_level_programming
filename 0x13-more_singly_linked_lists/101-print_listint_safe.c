@@ -8,32 +8,12 @@ void free_aux(aux_list *a)
 	aux_list *aux;
 
 	if (a == NULL)
-	{
-		free(a);
 		return;
-	}
 	while (a != NULL)
 	{
 		aux = a;
 		a = a->sig;
 		free(aux);
-	}
-}
-
-/**
- * imp - print a message depending of value of a
- * @a: integer to choose an option
- * @nuevo: listint pointer
- */
-void imp(int a, listint_t *nuevo)
-{
-	if (a == 1)
-	{
-		printf("[%p] %d\n", (void *)nuevo, nuevo->n);
-	}
-	if (a == 2)
-	{
-		printf("-> [%p] %d\n", (void *)nuevo, nuevo->n);
 	}
 }
 /**
@@ -43,44 +23,47 @@ void imp(int a, listint_t *nuevo)
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	int cont = 0;
-	listint_t *nuevo;
-	aux_list *guardar1, *temp, *guardar2;
+	int c = 0;
+	listint_t *m;
+	aux_list *g1 = NULL, *temp, *g2;
 
 	if (!head)
-		return (cont);
-	nuevo = (listint_t *)head->next;
-	imp(1, (listint_t *)head);
-	while (nuevo != NULL)
+		return (c);
+	m = (listint_t *)head;
+	for (; m != NULL; g2 = g1, c++, m = m->next)
 	{
 		temp = malloc(sizeof(aux_list));
 		if (!temp)
 			exit(98);
-		if (cont == 0)
-		{
-			temp->p = (aux_list *)head;
-			temp->sig = NULL;
-			guardar1 = temp;
-		}
+		temp->p = m;
+		temp->sig = NULL;
+		if (c == 0)
+			g1 = temp;
 		else
 		{
-			while (guardar2->sig != NULL)
+			while (g2->sig != NULL)
 			{
-				if (nuevo == guardar2->p)
-				{ imp(2, nuevo);
-					free_aux(guardar1);
-					return (cont); }
-				guardar2 = guardar2->sig;
+				if (m == g2->p)
+				{
+					printf("-> [%p] %d\n", (void *)m, m->n);
+					free_aux(g1);
+					return (c);
+				}
+				g2 = g2->sig;
 			}
-			temp->p = nuevo;
-			temp->sig = NULL;
-			guardar2->sig = temp;
-			imp(1, nuevo);
-			nuevo = nuevo->next;
+			if (g2->sig == NULL)
+			{
+				if (m == g2->p)
+				{
+					printf("-> [%p] %d\n", (void *)m, m->n);
+					free_aux(g1);
+					return (c);
+				}
+			}
+			g2->sig = temp;
 		}
-		guardar2 = guardar1;
-		cont++;
+		printf("[%p] %d\n", (void *)m, m->n);
 	}
-	free_aux(guardar1);
-	return (cont);
+	free_aux(g1);
+	return (c);
 }
