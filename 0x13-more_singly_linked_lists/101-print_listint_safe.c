@@ -16,7 +16,6 @@ void free_aux(aux_list *a)
 	{
 		aux = a;
 		a = a->sig;
-		free(aux->p);
 		free(aux);
 	}
 }
