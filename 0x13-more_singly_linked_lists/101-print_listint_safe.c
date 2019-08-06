@@ -31,7 +31,7 @@ size_t print_listint_safe(const listint_t *head)
 	if (!head)
 		return (0);
 	a = NULL;
-	for (; head != NULL; cont++, head = head->next)
+	while (head != NULL)
 	{
 		t = malloc(sizeof(aux_list));
 		if (!t)
@@ -39,18 +39,20 @@ size_t print_listint_safe(const listint_t *head)
 		t->p = (void *)head;
 		t->sig = a;
 		a = t;
-		b = a->sig;
-		while (b != NULL)
+		b = a;
+		while (b->sig != NULL)
 		{
+			b = b->sig;
 			if (head == b->p)
 			{
 				printf("-> [%p] %d\n", (void *)head, head->n);
 				free_aux(a);
 				return (cont);
 			}
-			b = b->sig;
 		}
 		printf("[%p]  %d\n", (void *)head, head->n);
+		cont++;
+		head = head->next;
 	}
 	free_aux(a);
 	return (cont);
