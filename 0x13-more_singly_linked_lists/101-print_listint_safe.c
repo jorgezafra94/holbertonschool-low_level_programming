@@ -31,13 +31,13 @@ size_t print_listint_safe(const listint_t *head)
 	if (!head)
 		return (0);
 	a = NULL;
-        for (; head != NULL; cont++, head = head->next)
+	for (; head != NULL; cont++, head = head->next)
 	{
 		t = malloc(sizeof(aux_list));
 		if (!t)
 			exit(98);
 		t->p = (void *)head;
-		t->sig =a;
+		t->sig = a;
 		a = t;
 		b = a->sig;
 		while (b != NULL)
