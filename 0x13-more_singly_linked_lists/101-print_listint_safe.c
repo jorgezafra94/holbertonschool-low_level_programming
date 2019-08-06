@@ -69,7 +69,6 @@ size_t print_listint_safe(const listint_t *head)
 			{
 				if (nuevo == guardar2->p)
 				{ imp(2, nuevo);
-					free_aux(guardar1);
 					return (cont); }
 				guardar2 = guardar2->sig;
 			}
@@ -82,6 +81,5 @@ size_t print_listint_safe(const listint_t *head)
 		nuevo = nuevo->next;
 		cont++;
 	}
-	free_aux(guardar1);
 	return (cont);
 }
