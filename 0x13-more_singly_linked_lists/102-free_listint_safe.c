@@ -7,14 +7,14 @@
 size_t free_listint_safe(listint_t **h)
 {
 	size_t c = 0;
-	listp_t *a, *b, *t;
+	aux_list *a, *b, *t;
 	listint_t *f;
 
 	f = *h;
 	a = NULL;
 	for (; *h != NULL; c++)
 	{
-		t = malloc(sizeof(listp_t));
+		t = malloc(sizeof(aux_list));
 		if (!t)
 			exit(98);
 		t->p = *h;
@@ -26,7 +26,7 @@ size_t free_listint_safe(listint_t **h)
 		{
 			if (*h == b->p)
 			{
-				free_listp(a);
+				free_aux(a);
 				*h = NULL;
 				return (c);
 			}
@@ -35,6 +35,6 @@ size_t free_listint_safe(listint_t **h)
 		*h = (*h)->next;
 		free(f);
 	}
-	free_listp(a);
+	free_aux(a);
 	return (c);
 }
