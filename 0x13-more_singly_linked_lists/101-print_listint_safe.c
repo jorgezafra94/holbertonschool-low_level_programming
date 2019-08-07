@@ -36,7 +36,7 @@ size_t print_listint_safe(const listint_t *head)
 	a = NULL;
 	for (; head != NULL; c++, head = head->next)
 	{
-		t = malloc(sizeof(listp_t));
+		t = malloc(sizeof(aux_list));
 		if (!t)
 			exit(98);
 		t->p = (void *)head;
