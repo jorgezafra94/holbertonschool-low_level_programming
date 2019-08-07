@@ -2,7 +2,7 @@
 
 /**
  * free_listp - frees a linked list
- * @head: head of a list.
+ * @p: head of a list.
  *
  * Return: no return.
  */
