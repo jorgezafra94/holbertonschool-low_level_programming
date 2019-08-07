@@ -1,14 +1,14 @@
 #include "lists.h"
 
 /**
- * free_listp - frees a linked list
+ * free_aux - frees a linked list
  * @p: head of a list.
  *
  * Return: no return.
  */
-void free_listp(listp_t *p)
+void free_aux(aux_list *p)
 {
-	listp_t *aux;
+	aux_list *aux;
 
 	if (p == NULL)
 	{
@@ -31,7 +31,7 @@ void free_listp(listp_t *p)
 size_t print_listint_safe(const listint_t *head)
 {
 	size_t c = 0;
-	listp_t *a, *b, *t;
+	aux_list *a, *b, *t;
 
 	a = NULL;
 	for (; head != NULL; c++, head = head->next)
@@ -48,13 +48,13 @@ size_t print_listint_safe(const listint_t *head)
 			if (head == b->p)
 			{
 				printf("-> [%p] %d\n", (void *)head, head->n);
-				free_listp(a);
+				free_aux(a);
 				return (c);
 			}
 			b = b->next;
 		}
 		printf("[%p] %d\n", (void *)head, head->n);
 	}
-	free_listp(a);
+	free_aux(a);
 	return (c);
 }
