@@ -28,7 +28,7 @@ typedef struct aux
 {
 	void *p;
 	struct aux *next;
-} listp_t;
+} aux_list;
 
 size_t print_listint(const listint_t *h);
 size_t listint_len(const listint_t *h);
@@ -45,5 +45,5 @@ listint_t *reverse_listint(listint_t **head);
 size_t print_listint_safe(const listint_t *head);
 size_t free_listint_safe(listint_t **h);
 listint_t *find_listint_loop(listint_t *head);
-void free_listp(listp_t *p);
+void free_aux(aux_list *p);
 #endif
