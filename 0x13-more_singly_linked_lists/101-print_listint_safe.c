@@ -6,20 +6,19 @@
  *
  * Return: no return.
  */
-void free_listp(listp_t **head)
+void free_listp(listp_t *p)
 {
-	listp_t *temp;
-	listp_t *curr;
+	listp_t *aux;
 
-	if (head != NULL)
+	if (p == NULL)
 	{
-		curr = *head;
-		while ((temp = curr) != NULL)
-		{
-			curr = curr->next;
-			free(temp);
-		}
-		*head = NULL;
+		return;
+	}
+	while (p != NULL)
+	{
+		aux = p;
+		p = p->next;
+		free(aux);
 	}
 }
 
@@ -31,39 +30,31 @@ void free_listp(listp_t **head)
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t nnodes = 0;
-	listp_t *hptr, *new, *add;
+	size_t c = 0;
+	listp_t *a, *b, *t;
 
-	hptr = NULL;
-	while (head != NULL)
+	a = NULL;
+	for (; head != NULL; c++, head = head->next)
 	{
-		new = malloc(sizeof(listp_t));
-
-		if (new == NULL)
+		t = malloc(sizeof(listp_t));
+		if (!t)
 			exit(98);
-
-		new->p = (void *)head;
-		new->next = hptr;
-		hptr = new;
-
-		add = hptr;
-
-		while (add->next != NULL)
+		t->p = (void *)head;
+		t->next = a;
+		a = t;
+		b = a->next;
+		while (b != NULL)
 		{
-			add = add->next;
-			if (head == add->p)
+			if (head == b->p)
 			{
 				printf("-> [%p] %d\n", (void *)head, head->n);
-				free_listp(&hptr);
-				return (nnodes);
+				free_listp(a);
+				return (c);
 			}
+			b = b->next;
 		}
-
 		printf("[%p] %d\n", (void *)head, head->n);
-		head = head->next;
-		nnodes++;
 	}
-
-	free_listp(&hptr);
-	return (nnodes);
+	free_listp(a);
+	return (c);
 }
