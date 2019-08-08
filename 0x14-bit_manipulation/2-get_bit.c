@@ -7,18 +7,10 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned int i = 0, j = 0;
-	unsigned long int cont;
+	unsigned int i = 0;
 	int aux = 0;
 
-	cont = n;
-
-	while (cont != 0)/*counting number of elements*/
-	{
-		j++;
-		cont = cont >> 1;
-	}
-	if (j <= index)/*evaluate if the index is bigger than amount numbers*/
+	if (index > 63)/*evaluate if the index is bigger than amount numbers*/
 	{
 		return (-1);
 	}
