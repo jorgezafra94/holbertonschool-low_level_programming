@@ -12,10 +12,7 @@ int get_bit(unsigned long int n, unsigned int index)
 	int aux = 0;
 
 	cont = n;
-	if (n == 0)
-	{
-		return (0);
-	}
+
 	while (cont != 0)/*counting number of elements*/
 	{
 		j++;
@@ -25,11 +22,8 @@ int get_bit(unsigned long int n, unsigned int index)
 	{
 		return (-1);
 	}
-	else
-	{
-		for (; i < index; i++) /*go through the numbers*/
-			n = n >> 1;
-		aux = n & 1;/*get the bit in index number*/
-		return (aux);
-	}
+	for (; i < index; i++) /*go through the numbers*/
+		n = n >> 1;
+	aux = n & 1;/*get the bit in index number*/
+	return (aux);
 }
