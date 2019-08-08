@@ -19,7 +19,7 @@ typedef struct listint_s
 /**
  * struct aux - auxiliar linked list
  * @p: pointer to be storage
- * @sig: points to the next node
+ * @next: points to the next node
  *
  * Description: singly linked list node structure
  * for Holberton project
