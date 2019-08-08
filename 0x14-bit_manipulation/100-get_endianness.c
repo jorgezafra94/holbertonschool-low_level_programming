@@ -5,12 +5,13 @@
  */
 int get_endianness(void)
 {
-	int num = 1;
-	char *c = (char *)&num;
+	int num = 1, endianness;
 
-	/*printf("esta es la dir %s", c);*/
-	if (c == NULL)
-		return (0);
-	else
+	endianness = num >> sizeof(int);
+	endianness = endianness & 1;
+
+	if (endianness == 0)
 		return (1);
+	else
+		return (0);
 }
