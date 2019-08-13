@@ -40,7 +40,7 @@ int main(int argc, char *av[])
 
 	buffer = malloc(sizeof(char) * 1024);
 	if (!buffer)
-		return (0);
+		exit(98);
 	rd = read(x, buffer, 1024);
 	imp(3, rd, av[1]);
 
