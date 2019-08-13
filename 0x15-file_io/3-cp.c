@@ -24,10 +24,7 @@ int main(int argc, char *av[])
 	buffer = malloc(sizeof(char) * 1024);
 	y = open(av[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
 	if (y == -1)
-	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
-		exit(99);
-	}
 	while ((rd = read(x, buffer, 1024)) > 0)
 	{
 		fa = write(y, buffer, rd);
