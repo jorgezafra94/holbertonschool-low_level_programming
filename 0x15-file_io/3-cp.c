@@ -57,11 +57,15 @@ int main(int argc, char *av[])
 	clo1 = close(x);
 	clo2 = close(y);
 	if (clo1 != 0)
+	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", x);
-	if (clo2 != 0)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", y);
-	if (clo1 != 0 || clo2 != 0)
 		exit(100);
+	}
+	if (clo2 != 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", y);
+		exit(100);
+	}
 	free(buffer);
 	return (0);
 }
