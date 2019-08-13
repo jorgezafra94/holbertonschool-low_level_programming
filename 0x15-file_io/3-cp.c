@@ -26,20 +26,21 @@ int main(int argc, char *av[])
 		exit(98); }
 	y = open(av[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
 	if (y == -1)
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
+	{ dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
+		exit(99); }
 	while (rd > 0)
-	{
-		fa = write(y, buffer, rd);
+	{ fa = write(y, buffer, rd);
 		if (fa == -1)
-			exit(99);
+		{ dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
+			exit(99); }
 		rd = read(x, buffer, 1024);
 	}
 	clo1 = close(x);
 	clo2 = close(y);
 	if (clo1 != 0)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", clo1);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", x);
 	if (clo2 != 0)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", clo2);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", y);
 	if (clo1 != 0 || clo2 != 0)
 		exit(100);
 	free(buffer);
