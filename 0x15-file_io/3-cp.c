@@ -11,22 +11,19 @@ int main(int argc, char *av[])
 	int x, y, fa, rd, clo1, clo2;
 
 	if (!(argc == 3))
-	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit(97);
-	}
+	{ dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(97); }
 	x = open(av[1], O_RDONLY);
 	if (x == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
-		exit(98);
-	}
+	{ dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+		exit(98); }
 	buffer = malloc(sizeof(char) * 1024);
 	if (!buffer)
 		return (0);
 	rd = read(x, buffer, 1024);
 	if (rd == -1)
-		exit(98);
+	{ dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+		exit(98); }
 	y = open(av[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
 	if (y == -1)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
