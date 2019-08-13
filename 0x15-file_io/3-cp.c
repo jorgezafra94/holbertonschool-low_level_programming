@@ -38,11 +38,11 @@ int main(int argc, char *av[])
 	x = open(av[1], O_RDONLY);
 	imp(1, x, av[1]);
 
-	rd = read(x, buffer, 1024);
-	imp(3, rd, av[1]);
-
 	y = open(av[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
 	imp(2, y, av[2]);
+
+	rd = read(x, buffer, 1024);
+	imp(3, rd, av[1]);
 
 	while (rd > 0)
 	{
