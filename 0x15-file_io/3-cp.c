@@ -22,6 +22,8 @@ int main(int argc, char *av[])
 		exit(98);
 	}
 	buffer = malloc(sizeof(char) * 1024);
+	if (!buffer)
+		return (0);
 	rd = read(x, buffer, 1024);
 	if (rd == -1)
 		exit(98);
