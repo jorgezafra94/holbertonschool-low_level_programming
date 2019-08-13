@@ -8,12 +8,12 @@
  */
 void imp(int num, int value, char *s)
 {
-	if ((num == 1 || num == 3) && value == -1)
+	if ((num == 1 && value == -1) || (num == 3 && value == -1))
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", s);
 		exit(98);
 	}
-	if ((num == 2 || num == 4) && value == -1)
+	if ((num == 2 && value == -1) || (num == 4 && value == -1))
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", s);
 		exit(99);
@@ -27,7 +27,7 @@ void imp(int num, int value, char *s)
  */
 int main(int argc, char *av[])
 {
-	char *buffer;
+	char buffer[1024];
 	int x, y, fa, rd, clo1, clo2;
 
 	if (!(argc == 3))
@@ -38,9 +38,6 @@ int main(int argc, char *av[])
 	x = open(av[1], O_RDONLY);
 	imp(1, x, av[1]);
 
-	buffer = malloc(sizeof(char) * 1024);
-	if (!buffer)
-		exit(98);
 	rd = read(x, buffer, 1024);
 	imp(3, rd, av[1]);
 
@@ -66,6 +63,5 @@ int main(int argc, char *av[])
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", y);
 		exit(100);
 	}
-	free(buffer);
 	return (0);
 }
