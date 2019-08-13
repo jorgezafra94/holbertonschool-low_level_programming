@@ -52,13 +52,13 @@ int main(int argc, char *av[])
 		imp(3, rd, av[1]);
 	}
 	clo1 = close(x);
-	if (clo1)
+	if (clo1 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", x);
 		exit(100);
 	}
 	clo2 = close(y);
-	if (clo2)
+	if (clo2 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", y);
 		exit(100);
