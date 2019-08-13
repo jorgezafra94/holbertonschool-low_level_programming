@@ -22,14 +22,18 @@ int main(int argc, char *av[])
 		exit(98);
 	}
 	buffer = malloc(sizeof(char) * 1024);
+	rd = read(x, buffer, 1024);
+	if (rd == -1)
+		exit(98);
 	y = open(av[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
 	if (y == -1)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
-	while ((rd = read(x, buffer, 1024)) > 0)
+	while (rd > 0)
 	{
 		fa = write(y, buffer, rd);
 		if (fa == -1)
 			exit(99);
+		rd = read(x, buffer, 1024);
 	}
 	clo1 = close(x);
 	clo2 = close(y);
