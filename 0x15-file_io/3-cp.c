@@ -30,9 +30,7 @@ int main(int argc, char *av[])
 	}
 	while ((rd = read(x, buffer, 1024)) > 0)
 	{
-		for (cont = 0; cont < 1024 && buffer[cont] != '\0'; cont++)
-			;
-		fa = write(y, buffer, cont);
+		fa = write(y, buffer, rd);
 		if (fa == -1)
 			exit(99);
 	}
