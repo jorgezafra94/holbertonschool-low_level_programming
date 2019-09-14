@@ -1,6 +1,6 @@
 **First steps with doubly linked list**
 
-In this project we are going to solves these problems
+In this project we are going to solve these problems
 
 0- Write a function that prints all the elements of a dlistint_t list.
 
