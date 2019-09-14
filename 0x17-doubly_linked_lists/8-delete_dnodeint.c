@@ -44,8 +44,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 				return (1);
 			}
 		}
-		num++;
-		aux = aux->next;
+		num++, aux = aux->next;
 	}
 	return (-1);
 }
