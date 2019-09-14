@@ -13,13 +13,13 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	if (h == NULL)
 		return (NULL);
-	if (*h == NULL || idx == 0)
+	if (idx == 0)
 	{
 		temp = add_dnodeint(h, n);
 		return (temp);
 	}
 	aux = *h;
-	while (aux->next)
+	while (aux && aux->next)
 	{
 		if (idx == num)
 		{
