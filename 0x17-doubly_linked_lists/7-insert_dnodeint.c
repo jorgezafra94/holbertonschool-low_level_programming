@@ -29,7 +29,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		return (NULL);
 	aux = *h;
 	num = 0;
-	while (aux && aux->next)
+	while (aux->next)
 	{
 		if (idx == num)
 		{
@@ -41,10 +41,10 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 			temp->prev = aux->prev;
 			temp->prev->next = temp;
 			temp->next->prev = temp;
-			return (temp);
+			break;
 		}
 		num++;
 		aux = aux->next;
 	}
-	return (NULL);
+	return (temp);
 }
