@@ -140,9 +140,8 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	shash_node_t *aux;
 	int flag = 0;
 
-	if (ht == NULL || value == NULL || key == NULL || key[0] == '\0')
+	if (ht == NULL || key == NULL || key[0] == '\0')
 		return (0);
-
 
 	index = key_index((const unsigned char *)key, ht->size);
 	if (ht->array[index] == NULL)
@@ -157,7 +156,11 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		while (aux != NULL)
 		{
 			if (strcmp(aux->key, key) == 0)
-				break;
+			{
+				free(aux->value);
+				aux->value = strdup(value);
+				return (1);
+			}
 			aux = aux->next;
 		}
 		if (aux == NULL)
@@ -165,11 +168,6 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 			flag =  H_N(&ht, &(ht->array[index]), key, value);
 			if (flag == 0)
 				return (0);
-		}
-		else
-		{
-			free(aux->value);
-			aux->value = strdup(value);
 		}
 	}
 	return (1);
