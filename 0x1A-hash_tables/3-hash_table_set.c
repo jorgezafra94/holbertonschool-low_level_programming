@@ -10,8 +10,6 @@ int add_hash_node(hash_node_t **node, const char *key, const char *value)
 {
 	hash_node_t *temp;
 
-	if()
-
 	if (*node == NULL)
 	{
 		temp = malloc(sizeof(hash_node_t));
