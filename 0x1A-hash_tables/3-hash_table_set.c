@@ -10,6 +10,8 @@ int add_hash_node(hash_node_t **node, const char *key, const char *value)
 {
 	hash_node_t *temp;
 
+	if()
+
 	if (*node == NULL)
 	{
 		temp = malloc(sizeof(hash_node_t));
@@ -45,7 +47,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *aux;
 	int flag = 0;
 
-	if (key == NULL || key[0] == '\0')
+	if (ht == NULL || value == NULL || key == NULL || key[0] == '\0')
 		return (0);
 
 	index = key_index((const unsigned char *)key, ht->size);
