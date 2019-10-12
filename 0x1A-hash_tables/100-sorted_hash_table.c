@@ -173,6 +173,40 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	return (1);
 }
 /**
+ * shash_table_get - function that get the value of the specified key
+ * @ht: table
+ * @key: key
+ * Return: the value
+ */
+char *shash_table_get(const shash_table_t *ht, const char *key)
+{
+	shash_node_t *aux;
+	unsigned long int index;
+
+	if (ht == NULL)
+		return (NULL);
+	if (key == NULL || key[0] == '\0')
+		return (NULL);
+
+	index = key_index((const unsigned char *)key, ht->size);
+	aux = ht->array[index];
+
+	while (aux != NULL)
+	{
+		if (strcmp(aux->key, key) == 0)
+			break;
+		aux = aux->next;
+	}
+	if (aux == NULL)
+	{
+		return (NULL);
+	}
+	else
+	{
+		return (aux->value);
+	}
+}
+/**
  * shash_table_print - print the doubly linked list that has all the elements
  * of the shash table, organized
  * @ht: shash table to print
