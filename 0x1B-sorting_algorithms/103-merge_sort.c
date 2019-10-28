@@ -19,17 +19,17 @@ void merging(int *array, int posi, int middle, int size, int *copy)
 	for (k = i; k < j; k++)
 	{
 		if (k != j - 1)
-			printf("%d ,", copy[k]);
+			printf("%d, ", array[k]);
 		else
-			printf("%d\n", copy[k]);
+			printf("%d\n", array[k]);
 	}
 	printf("[right]: ");
 	for (k = j; k < size; k++)
 	{
 		if (k != size - 1)
-			printf("%d ,", copy[k]);
+			printf("%d, ", array[k]);
 		else
-			printf("%d\n", copy[k]);
+			printf("%d\n", array[k]);
 	}
 	printf("[Done]: ");
 	for (k = i; k < size; k++)
@@ -45,7 +45,7 @@ void merging(int *array, int posi, int middle, int size, int *copy)
 			j++;
 		}
 		if (k != size - 1)
-			printf("%d ,", copy[k]);
+			printf("%d, ", copy[k]);
 		else
 			printf("%d\n", copy[k]);
 
