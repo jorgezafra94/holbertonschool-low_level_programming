@@ -8,9 +8,9 @@
 void bubble_sort(int *array, size_t size)
 {
 	int cont = 1, aux = 0;
-	size_t i;
+	size_t i, j;
 
-	while (cont != 0)
+	for (j = 0; j < size; j++)
 	{
 		cont = 0;
 		for (i = 0; i < size - 1; i++)
@@ -24,5 +24,7 @@ void bubble_sort(int *array, size_t size)
 				print_array(array, size);
 			}
 		}
+		if (cont == 0)
+			break;
 	}
 }
