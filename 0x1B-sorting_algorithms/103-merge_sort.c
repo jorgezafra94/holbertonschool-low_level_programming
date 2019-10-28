@@ -90,4 +90,5 @@ void merge_sort(int *array, size_t size)
 		copy[i] = array[i];
 
 	partition(copy, 0, size, array);
+	free(copy);
 }
