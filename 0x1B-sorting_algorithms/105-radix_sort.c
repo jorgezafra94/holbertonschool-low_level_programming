@@ -62,7 +62,7 @@ void radix_sort(int *array, size_t size)
 {
 	int max = 0, i, *copy, num = 1, var = 1;
 
-	if (array == NULL)
+	if (!array || size == 1)
 		return;
 
 	copy = malloc(sizeof(int) * (size - 1));
