@@ -130,6 +130,10 @@ void sorting(int *array, int begin, int end, int bool, int size)
  */
 void bitonic_sort(int *array, size_t size)
 {
+	if (!array || size <= 1)
+	{
+		return;
+	}
 	sorting(array, 0, size, 0, (int)size);
 	printf("Result [%ld/%ld] (UP):\n", size, size);
 	sortup(array, 0, (int)size);
