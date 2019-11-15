@@ -1,2 +1,3 @@
+# using all rule excecution what is inside mani.c 
 all: main.c holberton.c
 	gcc main.c holberton.c -o holberton
