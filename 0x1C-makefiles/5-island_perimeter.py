@@ -13,6 +13,7 @@ def island_perimeter(grid):
     if type(grid) is not list:
         return (0)
     else:
+        island = 0
         for elem in grid:
             if type(elem) is not list:
                 return (0)
@@ -20,6 +21,12 @@ def island_perimeter(grid):
                 for cell in elem:
                     if type(cell) is not int:
                         return (0)
+                    else:
+                        if cell == 1:
+                            island = 1
+    if island == 0:
+        return (0)
+
     count = 0
     islands = 0
     if len(grid) > 100:
