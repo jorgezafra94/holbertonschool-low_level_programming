@@ -10,7 +10,16 @@ def island_perimeter(grid):
     Grid cells are connected horizontally/vertically (not diagonally).
     Grid is rectangular, width and height don’t exceed 100
     """
-
+    if type(grid) is not list:
+        return (0)
+    else:
+        for elem in grid:
+            if type(elem) is not list:
+                return (0)
+            else:
+                for cell in elem:
+                    if type (cell) is not int:
+                        return (0)
     count = 0
     if len(grid) > 100:
         return (0)
