@@ -6,29 +6,34 @@ def island_perimeter(grid):
     get the perimeter of the island
     0 represents a water zone
     1 represents a land zone
+    One cell is a square with side length 1
+    Grid cells are connected horizontally/vertically (not diagonally).
+    Grid is rectangular, width and height don’t exceed 100
     """
+
     count = 0
-    flag = 0
     if len(grid) > 100:
-        flag = 1
+        return (0)
     else:
+        tam = len(grid[0])
         for elem in grid:
-            if len(elem) > 100:
-                flag = 1
-    if flag == 0:
-        for row in range(len(grid)):
-            for c in range(len(grid[row])):
-                if grid[row][c] == 1:
-                    t = row - 1
-                    d = row + 1
-                    l = c - 1
-                    r = c + 1
-                    if t >= 0 and t < len(grid[t]) and grid[t][c] == 0:
-                        count = count + 1
-                    if d < len(grid) and d < len(grid[d]) and grid[d][c] == 0:
-                        count = count + 1
-                    if l >= 0 and grid[row][l] == 0:
-                        count = count + 1
-                    if r < len(grid[row]) and grid[row][r] == 0:
-                        count = count + 1
+            if len(elem) > 100 or len(elem) != tam:
+                return (0)
+
+    for row in range(len(grid)):
+        for col in range(len(grid[row])):
+            if grid[row][col] == 1:
+                top = row - 1
+                down = row + 1
+                left = col - 1
+                right = col + 1
+                if top >= 0 and grid[top][col] == 0:
+                    count = count + 1
+                if down < len(grid) and grid[down][col] == 0:
+                    count = count + 1
+                if left >= 0 and grid[row][left] == 0:
+                    count = count + 1
+                if right < len(grid[row]) and grid[row][right] == 0:
+                    count = count + 1
+
     return (count)
