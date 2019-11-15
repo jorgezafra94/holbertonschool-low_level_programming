@@ -1,7 +1,7 @@
-# using varaibles but just recompile the file changed
+# using variables but just recompile the file changed
 CC = gcc
 SRC = main.c holberton.c
+OBJ := $(SRC:%.c=%.o)
 NAME = holberton
-OBJ := $(SRC:.c=.o)
 all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
