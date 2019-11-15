@@ -1,0 +1,18 @@
+# multiple rules
+CC = gcc
+NAME = holberton
+SRC = main.c holberton.c
+OBJ = $(SRC:%.c=%.o)
+RM = rm
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+clean:
+	$(RM) -f *~ $(NAME)
+
+oclean:
+	 $(RM) -f $(OBJ)
+
+fclean:	clean oclean
+
+re: oclean all
