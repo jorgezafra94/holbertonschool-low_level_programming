@@ -71,8 +71,7 @@ int jump_search(int *array, size_t size, int value)
 		prev = actual - paso;
 		printf("Value checked array[%i] = [%i]\n", prev, array[prev]);
 		printf("Value found between indexes [%i] and [%i]\n", prev, actual);
-		printf("Value checked array[%i] = [%i]\n", prev, array[prev]);
-		return (-1);
+		return (linear_search_mod(prev, size - 1, value, array));
 	}
 
 	printf("Value found between indexes [%i] and [%i]\n", prev, actual);
