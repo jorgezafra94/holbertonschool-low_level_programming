@@ -1,4 +1,4 @@
-*SEARCHING ALGORITHMS*
+*SEARCH ALGORITHMS*
 
 we are going to solve
 
