@@ -13,6 +13,8 @@ int recursion(int begin, int last, int *array, int value, int size)
 	int c = begin, mid;
 	char *aux;
 
+	if (last < begin)
+		return (-1);
 	printf("Searching in array: ");
 	aux = "";
 
@@ -24,24 +26,25 @@ int recursion(int begin, int last, int *array, int value, int size)
 	printf("\n");
 
 	mid = (begin + last) / 2;
+
 	if (array[mid] == value)
 	{
 		last = mid;
-		if (array[begin] != array[last])
+		if (begin != last)
 			return (recursion(begin, last, array, value, size));
 		return (begin);
 	}
 	else if (array[mid] > value)
 	{
 		last = mid - 1;
-		if (last < 0 || last < begin)
+		if (last < 0)
 			return (-1);
 		return (recursion(begin, last, array, value, size));
 	}
 	else
 	{
 		begin = mid + 1;
-		if (begin == size || begin > last)
+		if (begin == size)
 			return (-1);
 		return (recursion(begin, last, array, value, size));
 	}
