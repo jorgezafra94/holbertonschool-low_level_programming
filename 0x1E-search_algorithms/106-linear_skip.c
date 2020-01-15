@@ -3,7 +3,7 @@
 
 /**
  * search - goes through the linked list from one point to other
- * in order to get the value
+ * in order to get the value.
  * @prev: prev pointer
  * @actual: actual pointer
  * @value: value to search
