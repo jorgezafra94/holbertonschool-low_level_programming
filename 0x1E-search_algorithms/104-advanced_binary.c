@@ -29,9 +29,8 @@ int recursion(int begin, int last, int *array, int value, int size)
 
 	if (array[mid] == value)
 	{
-		last = mid;
-		if (begin != last)
-			return (recursion(begin, last, array, value, size));
+		if (begin != mid)
+			return (recursion(begin, mid, array, value, size));
 		return (begin);
 	}
 	else if (array[mid] > value)
