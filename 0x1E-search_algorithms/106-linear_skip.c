@@ -40,7 +40,7 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 		actual = actual->express;
 		act_i = actual->index;
 		pre_i = prev->index;
-		printf("Value checked array[%lu] = [%i]\n", act_i, actual->n);
+		printf("Value checked at index [%lu] = [%i]\n", act_i, actual->n);
 		if (prev->n > value && prev->index == 0)
 			return (NULL);
 		else if (actual->n >= value)
