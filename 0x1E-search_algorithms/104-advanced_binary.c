@@ -13,14 +13,20 @@ int recursion(int begin, int last, int *array, int value, int size)
 	int c = begin, mid;
 	char *aux;
 
+	if (begin == last && array[begin] != value)
+	{
+		return (-1);
+	}
 	printf("Searching in array: ");
 	aux = "";
+
 	for (; c <= last; c++)
 	{
 		printf("%s%i", aux, array[c]);
 		aux = ", ";
 	}
 	printf("\n");
+
 	mid = (begin + last) / 2;
 	if (array[mid] == value)
 	{
@@ -58,7 +64,7 @@ int recursion(int begin, int last, int *array, int value, int size)
  */
 int advanced_binary(int *array, size_t size, int value)
 {
-	if (array == NULL)
+	if (array == NULL || size == 0)
 	{
 		return (-1);
 	}
