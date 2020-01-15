@@ -26,11 +26,10 @@ int recursion(int begin, int last, int *array, int value, int size)
 	mid = (begin + last) / 2;
 	if (array[mid] == value)
 	{
-		if (array[mid - 1] == value)
-		{
-			return (recursion(begin, mid, array, value, size));
-		}
-		return (mid);
+		last = mid;
+		if (array[begin] != array[last])
+			return (recursion(begin, last, array, value, size));
+		return (begin);
 	}
 	else if (array[mid] > value)
 	{
