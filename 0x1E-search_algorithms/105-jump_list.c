@@ -51,7 +51,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 		if (actual)
 		{
 			act_i = actual->index;
-			printf("Value checked index [%lu] = [%i]\n", act_i, actual->n);
+			printf("Value checked at index [%lu] = [%i]\n", act_i, actual->n);
 			if (prev->n > value && prev->index == 0)
 				return (NULL);
 			else if (actual->n >= value)
