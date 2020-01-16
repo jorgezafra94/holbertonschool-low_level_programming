@@ -38,7 +38,7 @@ int recursion(int begin, int last, int *array, int value, int size)
 		last = mid - 1;
 		if (last < 0)
 			return (-1);
-		return (recursion(begin, last, array, value, size));
+		return (recursion(begin, mid, array, value, size));
 	}
 	else
 	{
